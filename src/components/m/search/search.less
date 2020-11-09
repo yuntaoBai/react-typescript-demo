@@ -1,0 +1,132 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    position: relative;
+    z-index: 9999;
+    .search-title {
+        position: relative;
+        height: 44px;
+        overflow: hidden;
+        transition: height .2s;
+        &.hide {
+            height: 0;
+        }
+        h2 {
+            position: absolute;
+            bottom: 0;
+            font-size: 24px;
+        }
+    }
+    .search-content {
+        position: relative;
+        height: 28px;
+        padding-top: 16px;
+        .search-input {
+            flex: 1;
+            width: 100%;
+            background-color: #cdcdcd;
+            border-radius: 4px;
+            height: 32px;
+            position: relative;
+            z-index: 1;
+            padding-left: 24px;
+            .search-icon {
+                position: absolute;
+                left: 6px;
+                height: 32px;
+                width: 24px;
+                background-image: url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0nMzgnIGhlaWdodD0nMzYnIHZpZXdCb3g9JzAgMCAzOCAzNicgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMjkuMDUgMjUuMjNhMTUuODEgMTUuODEgMCAwIDAgMy4wMDQtOS4yOTRjMC04LjgtNy4xNy0xNS45MzQtMTYuMDE3LTE1LjkzNEM3LjE5Mi4wMDIuMDIgNy4xMzYuMDIgMTUuOTM2YzAgOC44MDIgNy4xNzIgMTUuOTM3IDE2LjAxNyAxNS45MzdhMTYgMTYgMCAwIDAgMTAuNzcyLTQuMTQzbDguODczIDguMjMyIDIuMjk2LTIuNDUtOC45MjctOC4yODJ6TTE2LjIgMjguOTMzYy03LjE5IDAtMTMuMDQtNS43ODgtMTMuMDQtMTIuOTAzIDAtNy4xMTMgNS44NS0xMi45MDQgMTMuMDQtMTIuOTA0IDcuMTkgMCAxMi45IDUuNzkgMTIuOSAxMi45MDQgMCA3LjExNS01LjcxIDEyLjkwMy0xMi45IDEyLjkwM3onIGZpbGw9JyNiYmInIGZpbGwtcnVsZT0nZXZlbm9kZCcvPjwvc3ZnPg==');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 60%;
+            }
+            input {
+                width: 100%;
+                text-align: left;
+                display: block;
+                color: #000;
+                height: 32px;
+                font-size: 15px;
+                background-color: transparent;
+                border: 0;
+                line-height: 1.15;
+                overflow: visible;
+                outline-offset: -2px;
+                padding: 0 12px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .search-cancel {
+            position: absolute;
+            top: 18px;
+            right: 8px;
+            height: 28px;
+            flex: none;
+            line-height: 24px;
+            font-size: 24px;
+            color: #333;
+            width: 28px;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            z-index: 2;
+            text-align: center;
+        }
+    }
+    .search-result {
+        position: absolute;
+        width: 100%;
+        top: 48px;
+        left: 0;
+        display: none;
+        &.show {
+            display: block;
+        }
+        .nothing {
+            width: 100%;
+            display: flex;
+            min-height: 300px;
+            justify-content: center;
+            align-items: center;
+            color: #999;
+        }
+        .search-list {
+            display: flex;
+            flex-direction: column;
+            .list-item {
+                h2 {
+                    padding: 8px 12px;
+                    color: #666;
+                }
+                .list-child {
+                    background-color: #fff;
+                    margin-bottom: 1px;
+                    display: flex;
+                    padding: 6px 12px;
+                    .child-content {
+                        flex: 1;
+                        .child-title {
+                            line-height: 32px;
+                        }
+                        .child-info {
+                            line-height: 24px;
+                            font-size: 14px;
+                            color: #666;
+                        }
+                    }
+                    .child-price {
+                        width: 80px;
+                        line-height: 56px;
+                        text-align: right;
+                        span {
+                            font-size: 14px;
+                            color: #2d7dbd;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
